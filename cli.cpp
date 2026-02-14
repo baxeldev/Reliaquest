@@ -41,14 +41,20 @@ int cleanInput() {
         std::cin >> input;
 
         try {
-        cleanedInteger = std::stoi(input); //convert the input into a number
-
+        size_t position; //create an integer for the position of any non-integer characters
+        cleanedInteger = std::stoi(input, &position);
+        if (position != input.size()) {
+            std::cout << "ERROR: Number entered was not an integer.\n";
+            continue;
+        }
+        
         if (cleanedInteger < 0) {
             std::cout << "ERROR: Number entered was negative.\n";
             continue;
-            }
+        }
+
         running = false; // valid positive integer was entered
-        }  
+        }
 
         catch  (std::invalid_argument&) {
             std::cout << "ERROR: Invalid input. Please enter a positive integer.\n";
@@ -66,7 +72,8 @@ int main() {
     int choice;
     bool running = true;
     while (running) {
-        std::cout << "\n1. Insert a number\n"
+        std::cout << "\n Please choose an option below by entering the associated number\n"
+                     "1. Insert a number\n"
                      "2. Delete a number\n"
                      "3. Print all numbers\n"
                      "4. Delete all numbers\n"
