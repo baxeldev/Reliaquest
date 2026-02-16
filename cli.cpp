@@ -38,7 +38,7 @@ int cleanInput() {
     while (running) {
         std::cout << "Enter a positive integer: ";
         std::string input;
-        std::cin >> input;
+        std::getline(std::cin, input);
 
         try {
         size_t position; //create an integer for the position of any non-integer characters
@@ -47,7 +47,7 @@ int cleanInput() {
             std::cout << "ERROR: Number entered was not an integer.\n";
             continue;
         }
-        
+
         if (cleanedInteger < 0) {
             std::cout << "ERROR: Number entered was negative.\n";
             continue;
@@ -57,7 +57,7 @@ int cleanInput() {
         }
 
         catch  (std::invalid_argument&) {
-            std::cout << "ERROR: Invalid input. Please enter a positive integer.\n";
+            std::cout << "ERROR: Invalid input.\n";
         }
 
         catch (std::out_of_range&) {
@@ -79,9 +79,15 @@ int main() {
                      "4. Delete all numbers\n"
                      "5. Exit\n"
                      "Enter choice: ";
-        std::cin >> choice;
+        std::string choiceString;
+        std::getline(std::cin, choiceString);
 
-        if (!std::cin) return 0;
+        try {
+            choice = std::stoi(choiceString);
+        }
+        catch(...){
+            std::cout << "Invalid choice.\n";
+        }
 
         if (choice == 1) {
             int cleanedInput = cleanInput();
