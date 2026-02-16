@@ -26,10 +26,10 @@ A map is an ordered data structure that can store a key value pair. It was used 
 - Does not allow for duplicates, satisfying one of the conditions for choice 1.  <br>
 
 <h3> Build Instructions: </h3>
-1. Clone repository from Github into folder
-2. Open a terminal in the folder with the cloned files
-3. If not already installed, install g++ with the command "sudo apt install g++"
-4. Run the command "make"
-5. Run the command "./daemon" to invoke the daemon
-6. In a new terminal (still located in the same folder as the cloned files), run the command "./cli"
+1. Clone repository from Github into folder <br>
+2. Open a terminal in the folder with the cloned files <br>
+3. If not already installed, install g++ with the command "sudo apt install g++" <br>
+4. Run the command "make" <br>
+5. Run the command "./daemon" to invoke the daemon <br>
+6. In a new terminal (still located in the same folder as the cloned files), run the command "./cli" <br>
 
