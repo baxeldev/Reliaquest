@@ -1,4 +1,3 @@
-# Reliaquest
 <h2> Reliaquest Coding Assessment </h2>
 Task: <br>
  Create a daemon and a CLI in C++ that can interact using any IPC of your choice. The CLI, when invoked, presents following choices to the user:
